@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" role="img" aria-label="A2 Soluções">
+  <title>A2 Soluções</title>
+  <g fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M16 86 L48 12" stroke="#282829" stroke-width="12"/>
+    <path d="M48 12 L70 86" stroke="#282829" stroke-width="12"/>
+    <path d="M62 30 L78 18 L102 18 C118 18 128 30 128 44 C128 58 116 68 98 68 L74 68" stroke="#282829" stroke-width="12"/>
+    <path d="M64 86 H128" stroke="#282829" stroke-width="14"/>
+    <path d="M32 56 H66" stroke="#F26522" stroke-width="10"/>
+  </g>
+  <text x="148" y="64" fill="#282829" font-family="DM Sans, Arial, Helvetica, sans-serif" font-size="32" font-weight="700" letter-spacing="-0.03em">Soluções</text>
+</svg>

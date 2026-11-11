@@ -4,13 +4,13 @@
    ========================================================= */
 
 :root {
-  /* Cores principais — altere aqui */
-  --color-navy: #0b1f3a;
-  --color-navy-soft: #152a47;
-  --color-green: #0f9f6e;
-  --color-green-dark: #0b7a55;
-  --color-accent: #f97316;
-  --color-accent-hover: #ea6a0c;
+  /* Cores da marca A2 — carvão + laranja da logo */
+  --color-navy: #282829;
+  --color-navy-soft: #3a3a3b;
+  --color-green: #f26522;
+  --color-green-dark: #d9551a;
+  --color-accent: #f26522;
+  --color-accent-hover: #d9551a;
   --color-whatsapp: #25d366;
   --color-whatsapp-hover: #1ebe57;
 
@@ -18,7 +18,7 @@
   --color-bg: #f6f7f9;
   --color-bg-muted: #eef1f5;
   --color-surface: #ffffff;
-  --color-text: #1c2430;
+  --color-text: #282829;
   --color-text-muted: #5b6573;
   --color-border: #d8dee8;
   --color-error: #d92d20;
@@ -35,8 +35,8 @@
   --radius: 0.875rem;
   --radius-sm: 0.625rem;
   --header-height: 4rem;
-  --shadow-sm: 0 1px 2px rgba(11, 31, 58, 0.06);
-  --shadow-md: 0 8px 24px rgba(11, 31, 58, 0.08);
+  --shadow-sm: 0 1px 2px rgba(40, 40, 41, 0.06);
+  --shadow-md: 0 8px 24px rgba(40, 40, 41, 0.08);
   --transition: 0.25s ease;
 
   /* Espaço extra no fim da página (botão flutuante) */
@@ -163,7 +163,7 @@ input {
 }
 
 .eyebrow-light {
-  color: #7dd3b0;
+  color: #f9a078;
 }
 
 .lead {
@@ -201,12 +201,16 @@ input {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
   min-width: 0;
-  font-size: clamp(0.95rem, 3.6vw, 1.2rem);
-  font-weight: 700;
-  color: var(--color-navy);
-  letter-spacing: -0.03em;
-  white-space: nowrap;
+  line-height: 0;
+}
+
+.logo-img {
+  height: 2.5rem;
+  width: auto;
+  max-width: min(14rem, 62vw);
 }
 
 .header-cta {
@@ -251,7 +255,7 @@ input {
 .btn-primary {
   background: var(--color-accent);
   color: #fff;
-  box-shadow: 0 6px 16px rgba(249, 115, 22, 0.28);
+  box-shadow: 0 6px 16px rgba(242, 101, 34, 0.28);
 }
 
 .btn-primary:hover {
@@ -272,8 +276,8 @@ input {
 .hero {
   padding: 3rem 0 4rem;
   background:
-    radial-gradient(ellipse 80% 60% at 100% 0%, rgba(15, 159, 110, 0.12), transparent 55%),
-    radial-gradient(ellipse 70% 50% at 0% 100%, rgba(249, 115, 22, 0.08), transparent 50%),
+    radial-gradient(ellipse 80% 60% at 100% 0%, rgba(242, 101, 34, 0.12), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 0% 100%, rgba(40, 40, 41, 0.06), transparent 50%),
     var(--color-bg);
 }
 
@@ -350,10 +354,10 @@ input {
 .highlight-box {
   margin-top: 1.5rem;
   padding: 1.15rem 1.25rem;
-  background: rgba(15, 159, 110, 0.18);
-  border: 1px solid rgba(125, 211, 176, 0.35);
+  background: rgba(242, 101, 34, 0.18);
+  border: 1px solid rgba(249, 160, 120, 0.35);
   border-radius: var(--radius);
-  color: #e8fff5;
+  color: #ffe8dc;
   font-weight: 600;
   max-width: 40rem;
 }
@@ -385,7 +389,7 @@ input {
   align-items: center;
   justify-content: center;
   border-radius: 0.75rem;
-  background: rgba(15, 159, 110, 0.12);
+  background: rgba(242, 101, 34, 0.12);
   color: var(--color-green);
 }
 
@@ -451,8 +455,8 @@ input {
 
 .form-group input:focus {
   outline: none;
-  border-color: var(--color-green);
-  box-shadow: 0 0 0 3px rgba(15, 159, 110, 0.18);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(242, 101, 34, 0.18);
 }
 
 .form-group input.is-invalid {
@@ -542,6 +546,52 @@ input {
   transform: scale(1.05);
 }
 
+/* ---------- Splash de abertura ---------- */
+html.splash-skip .splash,
+html.splash-skip #splash-audio {
+  display: none !important;
+}
+
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  background: var(--color-navy);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.splash.is-leaving {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.splash-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.splash-logo {
+  width: min(13.5rem, 56vw);
+  height: auto;
+  display: block;
+  will-change: transform, opacity;
+}
+
+.splash.is-static .splash-logo {
+  opacity: 1;
+  transform: none;
+}
+
 /* ---------- Scroll reveal ---------- */
 .reveal {
   opacity: 0;
@@ -568,6 +618,10 @@ input {
   .btn,
   .whatsapp-float {
     transition: none;
+  }
+
+  .splash.is-leaving {
+    transition: opacity 0.2s ease, visibility 0.2s ease;
   }
 }
 

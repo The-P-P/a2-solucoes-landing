@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100" role="img" aria-label="A2 Soluções">
+  <title>A2 Soluções</title>
+  <g fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+    <!-- Left leg of A -->
+    <path d="M16 86 L48 12" stroke="#282829" stroke-width="12"/>
+    <!-- Shared right stem: A into 2 -->
+    <path d="M48 12 L70 86" stroke="#282829" stroke-width="12"/>
+    <!-- Upper bowl of 2 (apex cut echoes A) -->
+    <path d="M62 30 L78 18 L102 18 C118 18 128 30 128 44 C128 58 116 68 98 68 L74 68" stroke="#282829" stroke-width="12"/>
+    <!-- Sole plate of 2 -->
+    <path d="M64 86 H128" stroke="#282829" stroke-width="14"/>
+    <!-- Orange crossbar of A -->
+    <path d="M32 56 H66" stroke="#F26522" stroke-width="10"/>
+  </g>
+</svg>

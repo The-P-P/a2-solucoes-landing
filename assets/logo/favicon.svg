@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="A2">
+  <title>A2</title>
+  <rect width="100" height="100" rx="22" fill="#282829"/>
+  <g transform="translate(6 12) scale(0.62)" fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M16 86 L48 12" stroke="#FFFFFF" stroke-width="14"/>
+    <path d="M48 12 L70 86" stroke="#FFFFFF" stroke-width="14"/>
+    <path d="M62 30 L78 18 L102 18 C118 18 128 30 128 44 C128 58 116 68 98 68 L74 68" stroke="#FFFFFF" stroke-width="14"/>
+    <path d="M64 86 H128" stroke="#FFFFFF" stroke-width="16"/>
+    <path d="M32 56 H66" stroke="#F26522" stroke-width="12"/>
+  </g>
+</svg>

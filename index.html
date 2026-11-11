@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Alugue seu carro parado com segurança. Rastreamento 24h, manutenção inclusa e locatários selecionados. Saiba quanto seu carro pode render.">
   <title>A2 - Soluções | Alugue seu carro parado</title>
+  <link rel="icon" href="assets/logo/favicon.png" type="image/png" sizes="180x180">
+  <link rel="apple-touch-icon" href="assets/logo/favicon.png">
 
   <!-- Tipografia: DM Sans (fácil de trocar) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,13 +14,54 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function () {
+      try {
+        if (sessionStorage.getItem("a2_splash_seen") === "1") {
+          document.documentElement.classList.add("splash-skip");
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
+  <!-- ========== SPLASH DE ABERTURA ========== -->
+  <div class="splash" id="splash" aria-hidden="true">
+    <div class="splash-inner">
+      <img
+        class="splash-logo"
+        src="assets/logo/logo-mark-inverse.png"
+        alt="A2 Soluções"
+        width="512"
+        height="400"
+        decoding="async"
+      >
+    </div>
+  </div>
+  <audio id="splash-audio" src="assets/audio/A2-song1.wav" preload="auto"></audio>
+  <script>
+    (function () {
+      try {
+        if (sessionStorage.getItem("a2_splash_seen") === "1") return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var audio = document.getElementById("splash-audio");
+        if (!audio) return;
+        audio.volume = 1;
+        audio.currentTime = 0;
+        var p = audio.play();
+        if (p && typeof p.catch === "function") p.catch(function () {});
+      } catch (e) {}
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="js/splash.js"></script>
+
   <!-- ========== HEADER ========== -->
   <header class="site-header">
     <div class="container header-inner">
-      <!-- Nome da marca: edite aqui -->
-      <a href="#inicio" class="logo" aria-label="A2 - Soluções — Início">A2 - Soluções</a>
+      <a href="#inicio" class="logo" aria-label="A2 - Soluções — Início">
+        <img src="assets/logo/logo-horizontal.png" alt="A2 Soluções" class="logo-img" width="406" height="117">
+      </a>
       <a href="#formulario" class="btn btn-sm btn-primary header-cta">Quero alugar</a>
     </div>
   </header>
